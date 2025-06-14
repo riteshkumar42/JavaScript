@@ -31,9 +31,26 @@ const Obj3 = { 5: "a", 6: "b" }
 // const allObj = Object.assign({}, Obj1, Obj2, Obj3)
 
 const allObj = { ...Obj1, ...Obj2, ...Obj3 } // spread syntax (...)
-console.log(allObj);
+// console.log(allObj);
 
 
-console.log(Object.keys(User));  // output datatype Array
-console.log(Object.values(User));  // output datatype Array
-console.log(Object.entries(User));
+// console.log(Object.keys(User));  // output datatype Array
+// console.log(Object.values(User));  // output datatype Array
+// console.log(Object.entries(User));
+
+//*=====================================================
+
+// Objects De-structure
+
+const course = {
+    coursename: "JavaScript",
+    price: "Free",
+    courseTeacher: "Hitesh Choudhary"
+}
+
+// console.log(course.courseTeacher) 
+
+const {courseTeacher: teacher} = course // de-structure
+// console.log(courseTeacher);
+console.log(teacher);
+
