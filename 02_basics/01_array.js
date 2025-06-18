@@ -25,9 +25,9 @@ myArr.shift() // Remove the first element form the array.
 const myArr2 = ["ironman", "hulk", "thor", "spiderman"]
 
 // console.log(myArr2.includes("hulk")); 
-// element to search, return true/false
+//* element to search, return true/false
 // console.log(myArr2.indexOf("thor"));
-//The value to locate in the array.
+//* The value to locate in the array.
 
 const newArr = [0, 1, 2, 3, 4, 5]
 console.log("A ", newArr)
