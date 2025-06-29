@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | JavaScript</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <ui class="language">
+        <li>JavaScript</li>
+    </ui>
+</body>
+<script>
+    // Create a function to add languages 
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerText = `${langName}`
+        const addLang = document.querySelector('.language')
+        addLang.appendChild(li)
+    }
+    addLanguage('C++')
+    addLanguage('Python')
+
+
+    // optimized code with DSA
+    // Function to add a new programming language to the list
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li');   // Create a new <li> element
+        li.appendChild(document.createTextNode(langName));  // Create a text node with the language name and append it to the <li>
+        document.querySelector('.language').appendChild(li);  // Find the element with class "language" and append the new <li> to it
+    }
+    // Call the function to add "Java" to the list
+    addOptiLanguage('Java');
+
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)") // select second line
+    // secondLang.innerHTML = "Ruby"
+    const newLi = document.createElement('li') // create new element
+    newLi.textContent = "Ruby"
+    secondLang.replaceWith(newLi)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li>TypeScript</li>"
+
+
+    //remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+
+</script>
+
+</html>
