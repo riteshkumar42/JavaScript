@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121;">
+
+</body>
+<script>
+
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = 'main'
+    div.id = Math.round(Math.random() * 10 + 1)  // generate random ID's just for fun
+    div.setAttribute('title', "chai aur code")
+    // div.style.backgroundColor = 'green'
+    div.style.color = '#ddd'
+    div.style.padding = '18px'
+    div.style.border = '4px solid black'
+    // div.innerText = 'chai aur code'
+
+    // Add text node
+    // const addText = document.createTextNode('Chai aur code')
+    // div.appendChild(addText)
+
+    // // //Append to body
+    // document.body.appendChild(div)
+
+    //Function to change background color
+    function toChangeBackgroundColor(color) {
+        div.style.backgroundColor = color;
+    }
+    toChangeBackgroundColor('#238739')
+
+
+    // Function to Change text node
+    document.body.appendChild(div)
+    console.log('up good');
+    
+    function addCustomText(text) {
+        const addText = document.createTextNode(text)
+        div.appendChild(addText);
+        // div.innerText = '';   // Clear old content (optional)
+    }
+
+    // call the function
+    addCustomText('kya haal chal hain')
+
+</script>
+
+</html>
