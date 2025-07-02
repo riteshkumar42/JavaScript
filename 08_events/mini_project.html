@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini Project</title>
+</head>
+
+<body style="background-color: #212121; color: antiquewhite; font-family: sans-serif;">
+    <h1>setInterval & clearIntervel</h1>
+    <button id='start'>Start</button>
+    <button id='stop'>Stop</button>
+</body>
+
+<script>
+    console.log('run test');
+
+    const changeInterval = function () {
+        console.log("Date =", Date.now());
+    }
+
+    let stopInterval; // <-- Declare it outside to accessible for all
+
+    document.querySelector('#start').addEventListener('click', function () {
+        console.log("start button clicked");
+        stopInterval = setInterval(changeInterval, 1000);
+
+    })
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        console.log("stop button clicked");
+        clearInterval(stopInterval);
+    })
+
+</script>
+
+</html>
