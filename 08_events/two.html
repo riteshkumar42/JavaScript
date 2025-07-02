@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: antiquewhite;">
+    <h1>Coffee aur code</h1>
+    <button id='stop'>Stop</button>
+</body>
+
+<script>
+    console.log('run test');
+
+    // const timeOut = function () {
+    //     console.log("It's work");
+    // }
+    // setTimeout(timeOut, 3000)  // pass timeOut reference only not execute
+
+    // setTimeout and clearTimeout
+    const changeText = function () {
+        document.querySelector('h1').innerHTML = `Learn <span style="color: #4caf50;">JavaScript</span>`
+    }
+
+        document.querySelector('#stop').addEventListener('click', function () {
+        console.log('clicked');
+        clearTimeout(stopChangeTime)
+
+    })
+    const stopChangeTime = setTimeout(changeText, 2000)
+
+
+</script>
+
+</html>
