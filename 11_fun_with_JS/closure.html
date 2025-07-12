@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #313131;">
+    <button id="orange" style="font-size: 3rem;">orange</button>
+    <button id="green" style="font-size: 3rem;">green</button>
+    <button id="yellow" style="font-size: 3rem;">yellow</button>
+    <button id="blue" style="font-size: 3rem;">blue</button>
+
+
+</body>
+<script>
+
+    // ========== Lexical scoping ======== //
+    function outer() {
+        let name = "CORE i5"
+
+        function innerOne() {
+            let username = "intel"
+            console.log("innerOne:", name); // inner-function access outer-function property
+        }
+        function innerTwo() {
+            console.log("innerTwo:", name);
+        }
+        innerOne()
+        innerTwo()
+        // console.log(username);  //❎ parent can't access child proparty
+
+    }
+    outer()
+    // console.log(name);  //❎
+
+
+
+    //===== Closures scoping =====//
+
+    function makeFunc() {
+        const name = "ASUS"
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFuns = makeFunc();
+    myFuns();
+</script>
+
+<script>
+    //❎ Not use!
+    // document.getElementById("orange").onclick = function () {
+    //     document.body.style.backgroundColor = "orange"
+    // }
+    // document.getElementById("green").onclick = function () {
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+
+    // Lexical scoping
+    function clickHandler(color) {
+
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+    document.getElementById('yellow').onclick = clickHandler('yellow')
+    document.getElementById('blue').onclick = clickHandler('blue')
+
+
+</script>
+
+</html>
